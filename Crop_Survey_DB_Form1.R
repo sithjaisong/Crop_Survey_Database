@@ -827,8 +827,7 @@ pestcd.date6 <- readWorksheet(wb,
                               header=FALSE)
 names(pestcd.date6) <- 'Pesticide.Date6'
 
-PESTICIDE <- cbind(no.pestcd,
-                   insectcd.use,
+PESTICIDE <- cbind(insectcd.use,
                    herbcd.use,
                    fungicd.use,
                    pestcd.name1,
