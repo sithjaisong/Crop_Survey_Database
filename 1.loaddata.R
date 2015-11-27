@@ -6,10 +6,10 @@ my_sheets <- gs_ls()
 
 my_sheets %>% glimpse() # there are ten variables that you should look at for this project
 
-dothis_sheets <- my_sheets %>% filter(author == "j.macasero") %>% filter(grepl("PH|Ph|ph|pH", sheet_title))
+SKEP_ph_sheets <- my_sheets %>% filter(author == "j.macasero") %>% filter(grepl("PH|Ph|ph|pH", sheet_title))
 
 # Here is just one sample data set from the google drive with 
 
-dataf1 <- gs_title(paste(dothis_sheets[54, "sheet_title"])) %>% gs_read(ws = "Form 1", header = FALSE)
+dataf1 <- gs_title(paste(SKEP_ph_sheets[54, "sheet_title"])) %>% gs_read(ws = "Form 1", header = FALSE)
 
-dataf1[3,3]
+dataf1 <- as.matrix(dataf1)

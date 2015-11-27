@@ -1,3 +1,6 @@
+
+# data for load this is the data 
+
 field.no <- dataf1[3,3]
 names(field.no) <- 'Field.No'
 
@@ -47,13 +50,8 @@ crop.est.method <- dataf1[14, 2]
   
 names(crop.est.method) <- 'Planting.Method'
 
-seed.age <- readWorksheet(wb,
-                          "Form 1",
-                          startRow=26,
-                          startCol=21,
-                          endRow=26,
-                          endCol=21,
-                          header=FALSE)
+seed.age <- dataf1[26,21]
+
 names(seed.age) <- 'Seedling.Age'
 
 tiller.no <- dataf1[ 27, 17]
@@ -72,25 +70,19 @@ if (length(plant.no[1,1]<1)) {
   names(plant.no) <- 'Plant.No'
 }
 
+crop.est.date <- dataf1[31, 12]
 
-crop.est.date <- adataf1[31, 12]
+Planting.Date <- as.Date(crop.est.date, "%YYYY-%m-%d")
 
-Planting.Date <- as.Date(crop.est.date[1, 1], "%YYYY-%m-%d")
+crop.harv.date <- dataf1[31, 24]
 
-crop.harv.date <- dataf1[31, 24] r
-Harvest.Date <- as.Date(crop.harv.date[1, 1], "%YYYY-%m-%d")
+Harvest.Date <- as.Date(crop.harv.date, "%YYYY-%m-%d")
 
 rice.var <- data[33, 5] 
 names(rice.var) <- 'Rice.Variety'
 
-var.type <- dataf1[]
-readWorksheet(wb,
-                          "Summary Visit 1",
-                          startRow=20,
-                          startCol=2,
-                          endRow=20,
-                          endCol=2,
-                          header=FALSE)
+var.type <- dataf1[20, 2]
+
 names(var.type) <- 'Variety.Type'
 
 CROP.EST <- cbind(crop.est.method,
@@ -112,348 +104,122 @@ names(manure.rate) <- 'Manure.Rate'
 N1.rate <- dataf1[39, 11] 
 names(N1.rate) <- 'N1.Rate'
 
-N1.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=39,
-                              startCol=19,
-                              endRow=39,
-                              endCol=22,
-                              header=FALSE)
+N1.fert.name <- dataf1[39,19]
 names(N1.fert.name) <- 'N1.Name'
 
-P1.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=40,
-                         startCol=11,
-                         endRow=40,
-                         endCol=14,
-                         header=FALSE)
-P1.rate <-as.character(P1.rate[1,1])
+P1.rate <- dataf1[40, 11]
 
-P1.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=40,
-                              startCol=19,
-                              endRow=40,
-                              endCol=22,
-                              header=FALSE)
+P1.rate <-as.character(P1.rate)
+
+P1.fert.name <- dataf1[40,19] 
 names(P1.fert.name) <- 'P1.Name'
 
-K1.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=41,
-                         startCol=11,
-                         endRow=41,
-                         endCol=14,
-                         header=FALSE)
+K1.rate <- dataf1[41,11]
 names(K1.rate) <- 'K1.Rate'
 
-K1.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=41,
-                              startCol=19,
-                              endRow=41,
-                              endCol=22,
-                              header=FALSE)
+K1.fert.name <- dataf1[41, 19]
 names(K1.fert.name) <- 'K1.Name'
 
-N2.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=42,
-                         startCol=11,
-                         endRow=42,
-                         endCol=14,
-                         header=FALSE)
+N2.rate <- dataf1[42, 11] 
 names(N2.rate) <- 'N2.Rate'
 
-N2.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=42,
-                              startCol=19,
-                              endRow=42,
-                              endCol=22,
-                              header=FALSE)
+N2.fert.name <- dataf1[42,19] 
 names(N2.fert.name) <- 'N2.Name'
 
-P2.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=43,
-                         startCol=11,
-                         endRow=43,
-                         endCol=14,
-                         header=FALSE)
+P2.rate <- dataf1[43,11] 
 names(P2.rate) <- 'P2.Rate'
 
-P2.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=43,
-                              startCol=19,
-                              endRow=43,
-                              endCol=22,
-                              header=FALSE)
+P2.fert.name <- dataf1[43, 19] 
 names(P2.fert.name) <- 'P2.Name'
 
-K2.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=44,
-                         startCol=11,
-                         endRow=44,
-                         endCol=14,
-                         header=FALSE)
+K2.rate <- dataf1[44, 11]
 names(K2.rate) <- 'K2.Rate'
 
-K2.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=44,
-                              startCol=19,
-                              endRow=44,
-                              endCol=22,
-                              header=FALSE)
+K2.fert.name <- dataf1[44, 19] 
 names(K2.fert.name) <- 'K2.Name'
 
-N3.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=45,
-                         startCol=11,
-                         endRow=45,
-                         endCol=14,
-                         header=FALSE)
+N3.rate <- dataf1[45, 11]  
 names(N3.rate) <- 'N3.Rate'
 
-N3.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=45,
-                              startCol=19,
-                              endRow=45,
-                              endCol=22,
-                              header=FALSE)
+N3.fert.name <- dataf1[45,19]
 names(N3.fert.name) <- 'N3.Name'
 
-P3.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=46,
-                         startCol=11,
-                         endRow=46,
-                         endCol=14,
-                         header=FALSE)
+P3.rate <- dataf1[46, 11] 
 names(P3.rate) <- 'P3.Rate'
 
-P3.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=46,
-                              startCol=19,
-                              endRow=46,
-                              endCol=22,
-                              header=FALSE)
+P3.fert.name <- dataf1[46,19] 
 names(P3.fert.name) <- 'P3.Name'
 
-K3.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=47,
-                         startCol=11,
-                         endRow=47,
-                         endCol=14,
-                         header=FALSE)
+K3.rate <- dataf1[47,11] 
 names(K3.rate) <- 'K3.Rate'
 
-K3.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=47,
-                              startCol=19,
-                              endRow=47,
-                              endCol=22,
-                              header=FALSE)
+K3.fert.name <- dataf1[47,19] 
 names(K3.fert.name) <- 'K3.Name'
 
-N4.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=48,
-                         startCol=11,
-                         endRow=48,
-                         endCol=14,
-                         header=FALSE)
+N4.rate <- dataf1[48,11] 
+
 names(N4.rate) <- 'N4.Rate'
 
-N4.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=48,
-                              startCol=19,
-                              endRow=48,
-                              endCol=22,
-                              header=FALSE)
+N4.fert.name <- dataf1[48, 19] 
 names(N4.fert.name) <- 'N4.Name'
 
-P4.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=49,
-                         startCol=11,
-                         endRow=49,
-                         endCol=14,
-                         header=FALSE)
+P4.rate <- dataf1[49, 11]
 names(P4.rate) <- 'P4.Rate'
 
-P4.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=49,
-                              startCol=19,
-                              endRow=49,
-                              endCol=22,
-                              header=FALSE)
+P4.fert.name <-  dataf1[49,19] 
 names(P4.fert.name) <- 'P4.Name'
 
-K4.rate <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=50,
-                         startCol=11,
-                         endRow=50,
-                         endCol=14,
-                         header=FALSE)
+K4.rate <- dataf1[50, 11]
 names(K4.rate) <- 'K4.Rate'
 
-K4.fert.name <- readWorksheet(wb,
-                              "Form 1",
-                              startRow=50,
-                              startCol=19,
-                              endRow=50,
-                              endCol=22,
-                              header=FALSE)
+K4.fert.name <- dataf1[50, 19] 
 names(K4.fert.name) <- 'K4.Name'
 
-N.total <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=51,
-                         startCol=11,
-                         endRow=51,
-                         endCol=14,
-                         header=FALSE)
+N.total <- dataf1[51, 11] 
 names(N.total) <- 'Total.N'
 
-P.total <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=52,
-                         startCol=11,
-                         endRow=52,
-                         endCol=14,
-                         header=FALSE)
+P.total <-  dataf1[52, 11] 
 names(P.total) <- 'Total.P'
 
-K.total <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=53,
-                         startCol=11,
-                         endRow=53,
-                         endCol=14,
-                         header=FALSE)
+K.total <- dataf1[53, 11] 
 names(K.total) <- 'Total K'
 
-N1.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=55,
-                         startCol=11,
-                         endRow=55,
-                         endCol=14,
-                         header=FALSE)
-N1.date <- as.Date(N1.date[1, 1], "%YYYY-%m-%d")
+N1.date <- dataf1[55, 11] 
+N1.date <- as.Date(N1.date, "%YYYY-%m-%d")
 
-P1.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=56,
-                         startCol=11,
-                         endRow=56,
-                         endCol=14,
-                         header=FALSE)
-P1.date <- as.Date(P1.date[1, 1], "%YYYY-%m-%d")
+P1.date <- dataf1[56, 11] 
+P1.date <- as.Date(P1.date, "%YYYY-%m-%d")
 
-K1.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=57,
-                         startCol=11,
-                         endRow=57,
-                         endCol=14,
-                         header=FALSE)
-K1.date <- as.Date(K1.date[1, 1], "%YYYY-%m-%d")
+K1.date <- dataf1[57, 11] 
+K1.date <- as.Date(K1.date, "%YYYY-%m-%d")
 
-N2.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=58,
-                         startCol=11,
-                         endRow=58,
-                         endCol=14,
-                         header=FALSE)
-N2.date <- as.Date(N2.date[1, 1], "%YYYY-%m-%d")
+N2.date <- dataf1[58, 11] 
+N2.date <- as.Date(N2.date, "%YYYY-%m-%d")
 
-P2.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=59,
-                         startCol=11,
-                         endRow=59,
-                         endCol=14,
-                         header=FALSE)
-P2.date <- as.Date(P2.date[1, 1], "%YYYY-%m-%d")
+P2.date <- dataf1[59, 11] 
+P2.date <- as.Date(P2.date, "%YYYY-%m-%d")
 
-K2.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=60,
-                         startCol=11,
-                         endRow=60,
-                         endCol=14,
-                         header=FALSE)
-K2.date <- as.Date(K2.date[1, 1], "%YYYY-%m-%d")
+K2.date <- dataf1[60, 11] 
+K2.date <- as.Date(K2.date, "%YYYY-%m-%d")
 
-N3.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=61,
-                         startCol=11,
-                         endRow=61,
-                         endCol=14,
-                         header=FALSE)
-N3.date <- as.Date(N3.date[1, 1], "%YYYY-%m-%d")
+N3.date <- dataf1[61, 11] 
+N3.date <- as.Date(N3.date, "%YYYY-%m-%d")
 
-P3.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=62,
-                         startCol=11,
-                         endRow=62,
-                         endCol=14,
-                         header=FALSE)
-P3.date <- as.Date(P3.date[1, 1], "%YYYY-%m-%d")
+P3.date <- dataf1[62, 11]
+P3.date <- as.Date(P3.date, "%YYYY-%m-%d")
 
-K3.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=63,
-                         startCol=11,
-                         endRow=63,
-                         endCol=14,
-                         header=FALSE)
-K3.date <- as.Date(K3.date[1, 1], "%YYYY-%m-%d")
+K3.date <- dataf1[63,11] 
+K3.date <- as.Date(K3.date, "%YYYY-%m-%d")
 
-N4.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=64,
-                         startCol=11,
-                         endRow=64,
-                         endCol=14,
-                         header=FALSE)
-N4.date <- as.Date(N4.date[1, 1], "%YYYY-%m-%d")
+N4.date <- dataf1[64, 11]
+N4.date <- as.Date(N4.date, "%YYYY-%m-%d")
 
-P4.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=65,
-                         startCol=11,
-                         endRow=65,
-                         endCol=14,
-                         header=FALSE)
-P4.date <- as.Date(P4.date[1, 1], "%YYYY-%m-%d")
+P4.date <- dataf1[65, 11] 
+P4.date <- as.Date(P4.date, "%YYYY-%m-%d")
 
-K4.date <- readWorksheet(wb,
-                         "Form 1",
-                         startRow=66,
-                         startCol=11,
-                         endRow=66,
-                         endCol=14,
-                         header=FALSE)
-if (length(K4.date[1,1] <1)) K4.date[1,1] <- 'NULL'
-K4.date <- as.Date(K4.date[1, 1], "%YYYY-%m-%d")
+K4.date <- dataf1[66,11] 
+if (length(K4.date <1)) K4.date <- 'NULL'
+K4.date <- as.Date(K4.date, "%YYYY-%m-%d")
 
 FERTILISER <- cbind(manure.rate,
                     N1.rate,
@@ -499,7 +265,7 @@ print(FERTILISER)
 
 # ==========PESTICIDE==========
 
-insectcd.use <- readWorksheet(wb,
+insectcd.use <- dataf1[readWorksheet(wb,
                               "Summary Visit 1",
                               startRow=27,
                               startCol=2,
