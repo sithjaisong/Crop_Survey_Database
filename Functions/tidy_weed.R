@@ -1,30 +1,30 @@
-tidy_weed <- function(visit1) {
+tidy_weed <- function(visit2) {
     
-    row.names(visit1) <- NULL
+    row.names(visit2) <- NULL
     
-    weed.above <- visit1 %>% select(filename, visit, DVS, weed.aboveA:weed.aboveC) %>% gather(Samp, weed.above, weed.aboveA:weed.aboveC) %>% 
-        mutate(Samp = gsub("weed.above", "", Samp))
+    weed.above <- visit2 %>% select(filename, visit, DVS, weed.aboveA:weed.aboveC) %>% gather(Area, weed.above, weed.aboveA:weed.aboveC) %>% 
+        mutate(Area = gsub("weed.above", "", Area))
     
-    weed.below <- visit1 %>% select(filename, visit, DVS, weed.belowA:weed.belowC) %>% gather(Samp, weed.below, weed.belowA:weed.belowC) %>% 
-        mutate(Samp = gsub("weed.below", "", Samp))
+    weed.below <- visit2 %>% select(filename, visit, DVS, weed.belowA:weed.belowC) %>% gather(Area, weed.below, weed.belowA:weed.belowC) %>% 
+        mutate(Area = gsub("weed.below", "", Area))
     
-    S.rank <- visit1 %>% select(filename, visit, DVS, S.rankA:S.rankC) %>% gather(Samp, S.rank, S.rankA:S.rankC) %>% 
-        mutate(Samp = gsub("S.rank", "", Samp))
+    S.rank <- visit2 %>% select(filename, visit, DVS, S.rankA:S.rankC) %>% gather(Area, S.rank, S.rankA:S.rankC) %>% 
+        mutate(Area = gsub("S.rank", "", Area))
     
-    BD.rank <- visit1 %>% select(filename, visit, DVS, BD.rankA:BD.rankC) %>% gather(Samp, BD.rank, BD.rankA:BD.rankC) %>% 
-        mutate(Samp = gsub("BD.rank", "", Samp))
+    BD.rank <- visit2 %>% select(filename, visit, DVS, BD.rankA:BD.rankC) %>% gather(Area, BD.rank, BD.rankA:BD.rankC) %>% 
+        mutate(Area = gsub("BD.rank", "", Area))
     
-    G.rank <- visit1 %>% select(filename, visit, DVS, G.rankA:G.rankC) %>% gather(Samp, G.rank, G.rankA:G.rankC) %>% 
-        mutate(Samp = gsub("G.rank", "", Samp))
+    G.rank <- visit2 %>% select(filename, visit, DVS, G.rankA:G.rankC) %>% gather(Area, G.rank, G.rankA:G.rankC) %>% 
+        mutate(Area = gsub("G.rank", "", Area))
     
-    SD.rank <- visit1 %>% select(filename, visit, DVS, SD.rankA:SD.rankC) %>% gather(Samp, SD.rank, SD.rankA:SD.rankC) %>% 
-        mutate(Samp = gsub("SD.rank", "", Samp))
+    SD.rank <- visit2 %>% select(filename, visit, DVS, SD.rankA:SD.rankC) %>% gather(Area, SD.rank, SD.rankA:SD.rankC) %>% 
+        mutate(Area = gsub("SD.rank", "", Area))
     
     form2.weed.list <- list(weed.above, weed.below, S.rank, BD.rank, G.rank, SD.rank)
     
-    VISIT1 <- merge_recurse(form2.weed.list, by = c("filename", "visit", "Samp", "DVS"))  # okay this function call from the reshape package
+    VISIT2 <- merge_recurse(form2.weed.list, by = c("filename", "visit", "Area", "DVS"))  # okay this function call from the reshape package
     
-    return(VISIT1)
+    return(VISIT2)
     
 }
 # eos 

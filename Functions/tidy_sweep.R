@@ -1,23 +1,27 @@
-tidy_sweep <- function(visit1) {
+tidy_sweep <- function(visit2) {
     
-    row.names(visit1) <- NULL
+    row.names(visit2) <- NULL
     
-    GLH.sweep <- visit1 %>% select(filename, visit, GLH.sweep1:GLH.sweep5) %>% gather(Samp, GLH.sweep, GLH.sweep1:GLH.sweep5) %>% 
-        mutate(Samp = gsub("GLH.sweep", "", Samp))
+    GLH.sweep <- visit2 %>% select(filename, visit, DVS, GLH.sweep1:GLH.sweep5) %>% 
+      gather(Sweep.no, GLH.sweep, GLH.sweep1:GLH.sweep5) %>% 
+        mutate(Sweep.no = gsub("GLH.sweep", "", Sweep.no))
     
-    BPH.sweep <- visit1 %>% select(filename, visit, BPH.sweep1:BPH.sweep5) %>% gather(Samp, BPH.sweep, BPH.sweep1:BPH.sweep5) %>% 
-        mutate(Samp = gsub("BPH.sweep", "", Samp))
+    BPH.sweep <- visit2 %>% select(filename, visit, DVS, BPH.sweep1:BPH.sweep5) %>%
+      gather(Sweep.no, BPH.sweep, BPH.sweep1:BPH.sweep5) %>% 
+        mutate(Sweep.no = gsub("BPH.sweep", "", Sweep.no))
     
-    WPH.sweep <- visit1 %>% select(filename, visit, WPH.sweep1:WPH.sweep5) %>% gather(Samp, WPH.sweep, WPH.sweep1:WPH.sweep5) %>% 
-        mutate(Samp = gsub("WPH.sweep", "", Samp))
+    WPH.sweep <- visit2 %>% select(filename, visit, DVS,  WPH.sweep1:WPH.sweep5) %>% 
+      gather(Sweep.no, WPH.sweep, WPH.sweep1:WPH.sweep5) %>% 
+        mutate(Sweep.no = gsub("WPH.sweep", "", Sweep.no))
     
-    RC.sweep <- visit1 %>% select(filename, visit, RC.sweep1:RC.sweep5) %>% gather(Samp, RC.sweep, RC.sweep1:RC.sweep5) %>% 
-        mutate(Samp = gsub("RC.sweep", "", Samp))
+    RC.sweep <- visit2 %>% select(filename, visit, DVS, RC.sweep1:RC.sweep5) %>% 
+      gather(Sweep.no, RC.sweep, RC.sweep1:RC.sweep5) %>% 
+        mutate(Sweep.no = gsub("RC.sweep", "", Sweep.no))
     
     form2.sweep.list <- list(GLH.sweep, BPH.sweep, WPH.sweep, RC.sweep)
     
-    VISIT1 <- merge_recurse(form2.sweep.list, by = c("filename", "visit", "Samp"))  # okay this function call from the reshape package
+    VISIT2 <- merge_recurse(form2.sweep.list, by = c("filename", "visit", "Sweep.no", "DVS"))  # okay this function call from the reshape package
     
-    return(VISIT1)
+    return(VISIT2)
 }
 # eos 
