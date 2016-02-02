@@ -25,7 +25,7 @@ source("~/Documents/Github/Crop_Survey_Database/Functions/tidy_sweep.R")
 
 # insert the sweep net 
 
-setwd("~/Desktop/surveySKEP1")
+setwd("~/Google Drive/surveySKEP1")
 # load data of form2
 
 dirlist <- list.dirs()
@@ -35,11 +35,12 @@ dirlist <- list.dirs()
 # [5] THA#105 
 # [6] VNM#70
 
-j <- 2
-i <- 2
+#j <- 2
+#i <- 2
 form2.injury <- matrix(nrow = 0, ncol = 31)  # crearte the object to store the injury data
 form2.weed <- matrix(nrow = 0, ncol = 10)  # create the object to store the weed data
 form2.sweep <- matrix(nrow = 0, ncol = 10)
+
 for (j in 2:length(dirlist)) {
     list.file <- list.files(dirlist[j], pattern = ".xls")
     
@@ -195,10 +196,11 @@ FORM2.new$index <- FORM2$filename
 col_idx <- grep("index", names(FORM2.new))
 FORM2.new <- FORM2.new[, c(col_idx, (1:ncol(FORM2.new))[-col_idx])]
 
+save(FORM2.new, file =  "~/Google Drive/surveySKEP1/raw_FORM2.RData" )
 
 # output is new.row.sum
-head(FORM2.new)  # the final output
+#head(FORM2.new)  # the final output
 
 # save the output 
-write.csv(FORM2.new, 'FORM2.csv')
+#write.csv(FORM2.new, 'FORM2.csv')
 #eos

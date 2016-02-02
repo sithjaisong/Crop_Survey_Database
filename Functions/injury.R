@@ -643,36 +643,6 @@ injury <- function(dataf2){
   RS.Q10 <- dataf2[55, 14]
   names(RS.Q10) <- 'RS.Q10'
   
-  LS.Q1 <- dataf2[56, 5]
-  names(LS.Q1) <- 'LS.Q1'
-  
-  LS.Q2 <- dataf2[56, 6]
-  names(LS.Q2) <- 'LS.Q2'
-  
-  LS.Q3 <- dataf2[56, 7]
-  names(LS.Q3) <- 'LS.Q3'
-  
-  LS.Q4 <- dataf2[56, 8]
-  names(LS.Q4) <- 'LS.Q4'
-  
-  LS.Q5 <- dataf2[56, 9]
-  names(LS.Q5) <- 'LS.Q5'
-  
-  LS.Q6 <- dataf2[56, 10]
-  names(LS.Q6) <- 'LS.Q6'
-  
-  LS.Q7 <- dataf2[56, 11]
-  names(LS.Q7) <- 'LS.Q7'
-  
-  LS.Q8 <- dataf2[56, 12]
-  names(LS.Q8) <- 'LS.Q8'
-  
-  LS.Q9 <- dataf2[56, 13]
-  names(LS.Q9) <- 'LS.Q9'
-  
-  LS.Q10 <- dataf2[56, 14]
-  names(LS.Q10) <- 'LS.Q10'
-  
   SHB.Q1 <- dataf2[58, 5]
   names(SHB.Q1) <- 'SHB.Q1'
   
@@ -877,7 +847,6 @@ injury <- function(dataf2){
                       BLS.Q1, BLS.Q2, BLS.Q3, BLS.Q4, BLS.Q5, BLS.Q6, BLS.Q7, BLS.Q8, BLS.Q9, BLS.Q10,
                       NBS.Q1, NBS.Q2, NBS.Q3, NBS.Q4, NBS.Q5, NBS.Q6, NBS.Q7, NBS.Q8, NBS.Q9, NBS.Q10,
                       RS.Q1, RS.Q2, RS.Q3, RS.Q4, RS.Q5, RS.Q6, RS.Q7, RS.Q8, RS.Q9, RS.Q10,
-                      LS.Q1, LS.Q2, LS.Q3, LS.Q4, LS.Q5, LS.Q6, LS.Q7, LS.Q8, LS.Q9, LS.Q10,
                       SHB.Q1, SHB.Q2, SHB.Q3, SHB.Q4, SHB.Q5, SHB.Q6, SHB.Q7, SHB.Q8, SHB.Q9, SHB.Q10,
                       SHR.Q1, SHR.Q2, SHR.Q3, SHR.Q4, SHR.Q5, SHR.Q6, SHR.Q7, SHR.Q8, SHR.Q9, SHR.Q10,
                       SR.Q1, SR.Q2, SR.Q3, SR.Q4, SR.Q5, SR.Q6, SR.Q7, SR.Q8, SR.Q9, SR.Q10,
