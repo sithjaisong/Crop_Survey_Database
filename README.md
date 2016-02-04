@@ -37,8 +37,8 @@ Crop_Survey_Database
 |-----2.loadfileform2.R
 |-----Functions/
                 /--combind_injury1_2.R
-                /--combind_injury1_2.R
-                /--combind_injury1_2.R
+                /--combind_sweep1_2.R
+                /--combind_weed1_2.R
                 /--form1_df.R
                 /--long_injury.R
                 /--long_sweep.R
