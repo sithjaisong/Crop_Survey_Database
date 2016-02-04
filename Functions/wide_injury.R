@@ -7,7 +7,10 @@
 # outputs       : lond format data frame of injury data
 ##############################################################################
 
-injury <- function(dataf2){
+wide.injury <- function(dataf2){
+  
+  DVS <- dataf2[3, 4]
+  names(DVS) <- "DVS"
 
   tillers.Q1 <- dataf2[8, 5]
   names(tillers.Q1) <- 'Tillers.Q1'
@@ -827,7 +830,8 @@ injury <- function(dataf2){
   DP.Q10 <- dataf2[63, 14]
   names(DP.Q10) <- 'DP.Q10'
 
-  form2.data <- cbind(tillers.Q1,tillers.Q2,tillers.Q3,tillers.Q4, tillers.Q5, tillers.Q6, tillers.Q7, tillers.Q8, tillers.Q9, tillers.Q10,
+  form2.data <- cbind(DVS,
+                      tillers.Q1,tillers.Q2,tillers.Q3,tillers.Q4, tillers.Q5, tillers.Q6, tillers.Q7, tillers.Q8, tillers.Q9, tillers.Q10,
                       panicles.Q1, panicles.Q2, panicles.Q3, panicles.Q4, panicles.Q5, panicles.Q6, panicles.Q7, panicles.Q8, panicles.Q9, panicles.Q10,
                       leaves.Q1, leaves.Q2, leaves.Q3, leaves.Q4, leaves.Q5, leaves.Q6, leaves.Q7, leaves.Q8, leaves.Q9, leaves.Q10,
                       #=====

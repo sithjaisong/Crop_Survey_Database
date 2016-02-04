@@ -32,16 +32,20 @@ You can download or folk from :octocat: Github:[Crop_Survey_Database](https://gi
 
 ```
 Crop_Survey_Database
+|-----do.R
 |-----1.loadfileform1.R
 |-----2.loadfileform2.R
-|-----3.combind1_2.R
 |-----Functions/
-                /--form1.R
-                /--injury.R
-                /--sweep.R
-                /--tidy_injury.R
-                /--tidy_sweep.R
-                /--weed.R
+                /--combind_injury1_2.R
+                /--combind_injury1_2.R
+                /--combind_injury1_2.R
+                /--form1_df.R
+                /--long_injury.R
+                /--long_sweep.R
+                /--long_weed.R
+                /--wide_injury.R
+                /--wide_sweep.R
+                /--wide_weed.R
 
 ```
 
@@ -52,4 +56,4 @@ Crop_Survey_Database
 
 `2loadfileform2.R` is for transform the data of sheet2 and sheet3 named "form2 visit1" and "form2 visit2", respectively from wide table format to long table format.
 
-`3.combine1_2.R` is for combide the `FORM1` dataframe, which is the output from `1loadfileform1.R` and `FORM2` dataframe, which is the output from `2loadfileform2.R` using index as a primary key.
+`do.R` is for combide the `FORM1` dataframe, which is the output from `1loadfileform1.R` and `FORM2` dataframe, which is the output from `2loadfileform2.R` using index as a primary key.

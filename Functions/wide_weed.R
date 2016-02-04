@@ -7,8 +7,10 @@
 # outputs       : `weeddata` long format data frame of weed data
 ##############################################################################
 
-weed <- function(dataf2) {
+wide_weed <- function(dataf2) {
     # ==========WEEDS==========
+    DVS <- dataf2[3, 4]
+    names(DVS) <- "DVS"
 
     weed.aboveA <- dataf2[16, 3]
     names(weed.aboveA) <- "Weed.Above.A"
@@ -71,14 +73,14 @@ weed <- function(dataf2) {
     names(weed.sp2) <- "Weed.Species.2"
 
     weed.sp3 <- dataf2[18, 15]
-    
+
     names(weed.sp3) <- "Weed.Species.3"
 
     weed.sp4 <- dataf2[19, 15]
 
     names(weed.sp4) <- "Weed.Species.4"
 
-    weed.data <- cbind(weed.aboveA, weed.aboveB, weed.aboveC, weed.belowA,
+    weed.data <- cbind(DVS, weed.aboveA, weed.aboveB, weed.aboveC, weed.belowA,
         weed.belowB, weed.belowC, S.rankA, S.rankB, S.rankC, BD.rankA,
         BD.rankB, BD.rankC, G.rankA, G.rankB, G.rankC, SD.rankA, SD.rankB,
         SD.rankC)

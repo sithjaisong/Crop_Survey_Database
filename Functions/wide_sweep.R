@@ -7,7 +7,10 @@
 # outputs       : sweep data as wide data frame format;
 ##############################################################################
 
-sweep <- function(dataf2) {
+wide_sweep <- function(dataf2) {
+
+    DVS <- dataf2[3, 4]
+    names(DVS) <- "DVS"
 
     GLH.sweep1 <- dataf2[44, 5]
     names(GLH.sweep1) <- "GLH.Sweep.1"
@@ -70,7 +73,7 @@ sweep <- function(dataf2) {
     RC.sweep5 <- dataf2[47, 9]
     names(RC.sweep5) <- "RC.Sweep.5"
 
-    sweep.data <- cbind(GLH.sweep1, GLH.sweep2, GLH.sweep3, GLH.sweep4, GLH.sweep5, BPH.sweep1, BPH.sweep2, BPH.sweep3,
+    sweep.data <- cbind(DVS, GLH.sweep1, GLH.sweep2, GLH.sweep3, GLH.sweep4, GLH.sweep5, BPH.sweep1, BPH.sweep2, BPH.sweep3,
         BPH.sweep4, BPH.sweep5, WPH.sweep1, WPH.sweep2, WPH.sweep3, WPH.sweep4, WPH.sweep5, RC.sweep1, RC.sweep2, RC.sweep3,
         RC.sweep4, RC.sweep5)
 
