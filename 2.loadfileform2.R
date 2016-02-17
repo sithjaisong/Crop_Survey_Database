@@ -107,7 +107,5 @@ FORM2$index <- filename
 
 FORM2 <- FORM2 %>% select(index, everything())
 
-#names(FORM2) # check how many variables in the FORM2
-
-save(FORM2, file = "~/Google Drive/surveySKEP1/FORM2.RData")
+#eos
 

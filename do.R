@@ -28,5 +28,5 @@ source("~/Documents/Github/Crop_Survey_Database/2.loadfileform2.R")
 
 FULL <- left_join(FORM1, FORM2, by = "index")
 
-save(FULL, file =  "~/Google Drive/surveySKEP1/FULLdatabase1.RData")
+save(FORM1, FORM2, FULL, file =  "~/Google Drive/surveySKEP1/FULLdatabase1.RData")
     
