@@ -57,4 +57,6 @@ for (j in 2:length(dirlist)) {
   }
 }
 
+# names(FORM1) # check how many variables in FORM1
+
 #write.csv(FORM1.new, file = "FORM1.csv")
