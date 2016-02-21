@@ -35,6 +35,7 @@ Crop_Survey_Database
 |-----do.R
 |-----1.loadfileform1.R
 |-----2.loadfileform2.R
+|-----do.R
 |-----Functions/
                 /--combind_injury1_2.R
                 /--combind_sweep1_2.R
@@ -51,9 +52,9 @@ Crop_Survey_Database
 
 ## Transforming the data from excel to the data frame format
 
-`1loadfileform1.R` is for transform the data in sheet1 named "form 1"  from all subfolders in surveySKEP1 folder
+`1.loadfileform1.R` is for transform the data in sheet1 named "form 1"  from all subfolders in surveySKEP1 folder
 
 
-`2loadfileform2.R` is for transform the data of sheet2 and sheet3 named "form2 visit1" and "form2 visit2", respectively from wide table format to long table format.
+`2.loadfileform2.R` is for transform the data of sheet2 and sheet3 named "form2 visit1" and "form2 visit2", respectively from wide table format to long table format.
 
-`do.R` is for combide the `FORM1` dataframe, which is the output from `1loadfileform1.R` and `FORM2` dataframe, which is the output from `2loadfileform2.R` using index as a primary key.
+`do.R` is for combide the `FORM1` dataframe, which is the output from `1.loadfileform1.R` and `FORM2` dataframe, which is the output from `2.loadfileform2.R` using index as a primary key.
