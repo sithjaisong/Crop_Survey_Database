@@ -1,4 +1,10 @@
 
+# Load function
+#load function wide_injury()
+source("~/Documents/Github/Crop_Survey_Database/Functions/wide_injury.R")
+
+#load function long_injury()
+source("~/Documents/Github/Crop_Survey_Database/Functions/long_injury.R")
 
 combind_injury1_2 <- function(data1 = dataf2.1, data2 = dataf2.2){
   form2.injury <- matrix(nrow = 0, ncol = 30) 
@@ -21,3 +27,4 @@ combind_injury1_2 <- function(data1 = dataf2.1, data2 = dataf2.2){
   
 }
 
+#eos

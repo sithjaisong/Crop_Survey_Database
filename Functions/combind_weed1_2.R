@@ -1,4 +1,8 @@
+#load function wide_weed
+source("~/Documents/Github/Crop_Survey_Database/Functions/wide_weed.R")
 
+#load function long_weed
+source("~/Documents/Github/Crop_Survey_Database/Functions/long_weed.R")
 
 combind_weed1_2 <- function(data1 = dataf2.1, data2 = dataf2.2){
   form2.weed <- matrix(nrow = 0, ncol = 9)
@@ -20,3 +24,5 @@ combind_weed1_2 <- function(data1 = dataf2.1, data2 = dataf2.2){
   form2.weed <- rbind(form2.weed, new.row.weed)
 
 }
+
+#eos
